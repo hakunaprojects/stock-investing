@@ -4,6 +4,7 @@ Stock Investing Project has the purpose of identifying great US companies for in
 # APIs
 ## Helpful video and repository
 https://www.youtube.com/watch?v=-RSowRQ9CRU
+
 https://github.com/Peter-Staadecker/Edgar-and-the-Python
 
 ## SEC api documentation
