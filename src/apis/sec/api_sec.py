@@ -5,10 +5,13 @@ you can visit: https://www.sec.gov/edgar/sec-api-documentation
 """
 import os
 from typing import Union
+from jsonschema.validators import validate
 from src.apis.api import Api
 from src.apis.sec.company_concept_enum import CompanyConceptEnum
-from src.apis.sec.validate_functions import _validate_company_tickers_exchange_response, \
-    _validate_company_concept_response, _validate_company_facts_response
+from src.apis.sec.schemas.company_concept_schema import COMPANY_CONCEPT_SCHEMA
+from src.apis.sec.schemas.company_facts_schema import COMPANY_FACTS_SCHEMA
+from src.apis.sec.schemas.company_tickers_exchange_schema import COMPANY_TICKERS_EXCHANGE_SCHEMA
+from src.apis.sec.schemas.submissions_schema import SUBMISSIONS_SCHEMA
 
 
 def _cik_to_ten_digits_str(cik: int):
@@ -29,7 +32,7 @@ class ApiSEC(Api):
         """This API returns all companies in SEC, where the fields are cik, name, ticker (symbol) and exchange."""
         url = 'https://www.sec.gov/files/company_tickers_exchange.json'
         company_tickers_exchange_data = self.call_api(url=url)
-        _validate_company_tickers_exchange_response(company_tickers_exchange_response=company_tickers_exchange_data)
+        validate(instance=company_tickers_exchange_data, schema=COMPANY_TICKERS_EXCHANGE_SCHEMA)
         return company_tickers_exchange_data
 
     def get_company_concept(self, company_concept: CompanyConceptEnum, cik: Union[int, str]):
@@ -39,12 +42,19 @@ class ApiSEC(Api):
         url = f'https://data.sec.gov/api/xbrl/companyconcept/CIK{_cik_to_ten_digits_str(cik)}/' \
               f'{company_concept.get_taxonomy()}/{company_concept.get_concept()}.json'
         company_concept_data = self.call_api(url=url, headers=self.headers)
-        _validate_company_concept_response(company_concept_response=company_concept_data)
+        validate(instance=company_concept_data, schema=COMPANY_CONCEPT_SCHEMA)
         return company_concept_data
 
     def get_company_facts(self, cik: Union[int, str]):
         """This API returns all the company concepts data for a company into a single API call."""
         url = f'https://data.sec.gov/api/xbrl/companyfacts/CIK{_cik_to_ten_digits_str(cik)}.json'
         company_facts_data = self.call_api(url=url, headers=self.headers)
-        _validate_company_facts_response(company_facts_response=company_facts_data)
+        validate(instance=company_facts_data, schema=COMPANY_FACTS_SCHEMA)
         return company_facts_data
+
+    def get_submissions(self, cik: Union[int, str]):
+        """This API returns all the company concepts data for a company into a single API call."""
+        url = f'https://data.sec.gov/submissions/CIK{_cik_to_ten_digits_str(cik)}.json'
+        submissions_data = self.call_api(url=url, headers=self.headers)
+        validate(instance=submissions_data, schema=SUBMISSIONS_SCHEMA)
+        return submissions_data

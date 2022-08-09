@@ -11,6 +11,7 @@ def print_api_sec_responses():
     print(api_sec.get_company_concept(company_concept=CompanyConceptEnum.EARNINGS_PER_SHARE_DILUTED,
                                       cik=1318605))
     print(api_sec.get_company_facts(cik=1318605))
+    print(api_sec.get_submissions(cik=1318605))
 
 
 def print_api_financial_modeling_prep_responses():
