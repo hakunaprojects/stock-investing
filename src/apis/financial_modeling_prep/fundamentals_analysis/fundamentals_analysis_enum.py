@@ -1,7 +1,10 @@
 """
+FundamentalsAnalysisEnum
+It contains all required information to retrieve and verify Fundamentals Analysis Data from the Financial Modeling
+Prep Api.
 """
-from enum import Enum
-from jsonschema.validators import validate
+
+from src.apis.financial_modeling_prep.financial_modeling_prep_enum import FinancialModelingPrepEnum
 from src.apis.financial_modeling_prep.fundamentals_analysis.schemas.company_financial_growth import \
     COMPANY_FINANCIAL_GROWTH_SCHEMA
 from src.apis.financial_modeling_prep.fundamentals_analysis.schemas.company_financial_ratios_schema import \
@@ -12,7 +15,7 @@ from src.apis.financial_modeling_prep.fundamentals_analysis.schemas.company_key_
     COMPANY_KEY_METRICS_SCHEMA
 
 
-class FundamentalsAnalysisEnum(Enum):
+class FundamentalsAnalysisEnum(FinancialModelingPrepEnum):
     COMPANY_FINANCIAL_RATIOS = {'concept': 'CompanyFinancialRatios', 'path_concept': 'ratios',
                                 'validation_schema': COMPANY_FINANCIAL_RATIOS_SCHEMA}
     INCOME_STATEMENT_GROWTH = {'concept': 'IncomeStatementGrowth', 'path_concept': 'income-statement-growth',
@@ -21,12 +24,3 @@ class FundamentalsAnalysisEnum(Enum):
                                 'validation_schema': COMPANY_FINANCIAL_GROWTH_SCHEMA}
     COMPANY_KEY_METRICS_SCHEMA = {'concept': 'CompanyKeyMetrics', 'path_concept': 'key-metrics',
                                   'validation_schema': COMPANY_KEY_METRICS_SCHEMA}
-
-    def get_concept(self):
-        return self.value.get('concept')
-
-    def get_path_concept(self):
-        return self.value.get('path_concept')
-
-    def get_validate_data(self, data_to_validate):
-        validate(instance=data_to_validate, schema=self.value.get('validation_schema'))
