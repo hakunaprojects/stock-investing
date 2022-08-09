@@ -1,7 +1,7 @@
-#Project
+# Project
 Stock Investing Project has the purpose of identifying great US companies for investing in the long run. 
 
-#APIs
+# APIs
 ## Helpful video and repository
 https://www.youtube.com/watch?v=-RSowRQ9CRU
 https://github.com/Peter-Staadecker/Edgar-and-the-Python
