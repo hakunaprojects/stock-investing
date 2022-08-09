@@ -1,4 +1,7 @@
-"""Api Request Class"""
+"""
+Api Request Class
+Main Api class where the different APIs inherit from this.
+"""
 import json
 import time
 from typing import Dict, Optional
