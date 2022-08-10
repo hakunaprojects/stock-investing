@@ -9,8 +9,11 @@ from src.apis.sec.company_concept_enum import CompanyConceptEnum
 from tests.unit.apis.test_api import mock_response
 
 
+CURRENT_FOLDER = os.path.dirname(os.path.abspath(__file__))
+
+
 def get_json_file(file_name: str):
-    return json.dumps(json.load(open(f'../../fixtures/apis/sec/{file_name}.json')))
+    return json.dumps(json.load(open(f'{CURRENT_FOLDER}/fixtures/{file_name}.json')))
 
 
 class TestApiSec(unittest.TestCase):
