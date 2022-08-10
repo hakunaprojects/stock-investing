@@ -1,5 +1,7 @@
-import pytest
 from datetime import date
+
+import pytest
+
 from src.exceptions.api_request_exception import NotValidUrlException, NonJsonDataFoundException, \
     NotValidSchemaException
 

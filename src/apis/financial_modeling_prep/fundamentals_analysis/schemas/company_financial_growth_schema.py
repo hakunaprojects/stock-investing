@@ -1,3 +1,8 @@
+"""
+Company Financial Growth Schema
+Definition of the json-schema for the company financial growth response.
+"""
+
 COMPANY_FINANCIAL_GROWTH_SCHEMA = {
     "type": "array",
     "items": {"type": "object",

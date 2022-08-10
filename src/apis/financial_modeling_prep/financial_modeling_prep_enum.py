@@ -1,13 +1,15 @@
 """
 Financial Modeling Prep Enum
-It retrieves data from a third party provider who gets the information from the U.S. Securities and Exchange Commission
-(SEC). For additional information you can visit: https://site.financialmodelingprep.com/developer/docs/
+Parent enum with specific methods for financial modeling prep. It is inherited.
 """
 from enum import Enum
+
 from jsonschema.validators import validate
 
 
 class FinancialModelingPrepEnum(Enum):
+    """It contains the three main methods required to centralize all actions for financial modeling prep api"""
+
     def get_concept(self):
         """Retrieve the concept property from the current enum."""
         return self.value.get('concept')

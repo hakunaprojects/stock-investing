@@ -1,3 +1,8 @@
+"""
+Income Statement Schema
+Definition of the json-schema for the income statement response.
+"""
+
 INCOME_STATEMENT_SCHEMA = {
     "type": "array",
     "items": {"type": "object",

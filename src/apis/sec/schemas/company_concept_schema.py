@@ -1,3 +1,7 @@
+"""
+Company Concept Schema
+Definition of the json-schema for the company concept response.
+"""
 COMPANY_CONCEPT_SCHEMA = {
     "type": "object",
     "properties": {

@@ -1,3 +1,8 @@
+"""
+Company Tickers Exchange Schema
+Definition of the json-schema for the company tickers exchange response.
+"""
+
 COMPANY_TICKERS_EXCHANGE_SCHEMA = {
     "type": "object",
     "properties": {

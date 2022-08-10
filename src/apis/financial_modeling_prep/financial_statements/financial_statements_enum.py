@@ -13,6 +13,7 @@ from src.apis.financial_modeling_prep.financial_statements.schemas.income_statem
 
 
 class FinancialStatementsEnum(FinancialModelingPrepEnum):
+    """Defines the enum values with concept, path_concept and validation_schema."""
     INCOME_STATEMENT = {'concept': 'IncomeStatement', 'path_concept': 'income-statement',
                         'validation_schema': INCOME_STATEMENT_SCHEMA}
     BALANCE_SHEET_STATEMENT = {'concept': 'BalanceSheetStatement', 'path_concept': 'balance-sheet-statement',

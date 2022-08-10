@@ -1,3 +1,8 @@
+"""
+Company Facts Schema
+Definition of the json-schema for the company facts response.
+"""
+
 COMPANY_FACTS_SCHEMA = {
     "type": "object",
     "properties": {

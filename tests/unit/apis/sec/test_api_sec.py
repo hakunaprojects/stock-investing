@@ -4,6 +4,7 @@ import unittest
 from typing import Callable
 from unittest import mock
 from unittest.mock import patch
+
 from src.apis.sec.api_sec import ApiSEC
 from src.apis.sec.company_concept_enum import CompanyConceptEnum
 from tests.unit.apis.test_api import mock_response

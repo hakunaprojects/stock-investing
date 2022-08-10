@@ -4,13 +4,17 @@ Main Api class where the different APIs inherit from this.
 """
 import json
 import time
-from typing import Dict, Optional
-import requests
 from datetime import datetime
+from typing import Dict, Optional
+
+import requests
+
 from src.exceptions.api_request_exception import NotValidUrlException, NonJsonDataFoundException
 
 
 class Api:
+    """Main Api Class to inherit from other apis"""
+
     def __init__(self):
         self.last_call = None
 
@@ -26,8 +30,8 @@ class Api:
             self.last_call = datetime.now()
             try:
                 return json.loads(response.text)
-            except Exception as e:
-                raise NonJsonDataFoundException(f"The response from ``{url}`` is not a valid json. Exception: {e}")
+            except Exception as exception:
+                raise NonJsonDataFoundException(f"The response from ``{url}`` is not a valid json") from exception
         elif response.status_code == 404:
             raise NotValidUrlException(f"Url ``{url}`` not found.")
         else:

@@ -1,3 +1,8 @@
+"""
+Balance Sheet Statement Schema
+Definition of the json-schema for the balance sheet statement response.
+"""
+
 BALANCE_SHEET_STATEMENT_SCHEMA = {
     "type": "array",
     "items": {"type": "object",

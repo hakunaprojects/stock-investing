@@ -1,3 +1,7 @@
+"""
+Submissions Schema
+Definition of the json-schema for the submissions response.
+"""
 SUBMISSIONS_SCHEMA = {
     "type": "object",
     "properties": {

@@ -1,3 +1,8 @@
+"""
+Company Financial Ratios Schema
+Definition of the json-schema for the company financial ratios response.
+"""
+
 COMPANY_FINANCIAL_RATIOS_SCHEMA = {
     "type": "array",
     "items": {"type": "object",

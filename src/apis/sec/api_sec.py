@@ -5,7 +5,9 @@ you can visit: https://www.sec.gov/edgar/sec-api-documentation
 """
 import os
 from typing import Union
+
 from jsonschema.validators import validate
+
 from src.apis.api import Api
 from src.apis.sec.company_concept_enum import CompanyConceptEnum
 from src.apis.sec.schemas.company_concept_schema import COMPANY_CONCEPT_SCHEMA
@@ -20,6 +22,8 @@ def _cik_to_ten_digits_str(cik: int):
 
 
 class ApiSEC(Api):
+    """Api to retrieve data from financial modeling prep. For some requests is required an email."""
+
     def __init__(self):
         super().__init__()
         self.headers = {
@@ -38,7 +42,7 @@ class ApiSEC(Api):
     def get_company_concept(self, company_concept: CompanyConceptEnum, cik: Union[int, str]):
         """The company-concept API returns all the XBRL disclosures from a single company (CIK) and concept (a
         taxonomy and tag) into a single JSON file, with a separate array of facts for each units on measure that the
-        company has chosen to disclose (e.g. net profits reported in U.S. dollars and in Canadian dollars)."""
+        company has chosen to disclose."""
         url = f'https://data.sec.gov/api/xbrl/companyconcept/CIK{_cik_to_ten_digits_str(cik)}/' \
               f'{company_concept.get_taxonomy()}/{company_concept.get_concept()}.json'
         company_concept_data = self.call_api(url=url, headers=self.headers)

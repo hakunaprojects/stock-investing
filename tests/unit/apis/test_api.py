@@ -1,7 +1,9 @@
 import json
-import pytest
 import unittest
 from unittest.mock import patch, MagicMock
+
+import pytest
+
 from src.apis.api import Api
 from src.exceptions.api_request_exception import NotValidUrlException
 

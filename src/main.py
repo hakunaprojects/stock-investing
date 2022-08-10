@@ -1,3 +1,6 @@
+"""
+Main Module
+"""
 from src.apis.financial_modeling_prep.api_financial_modeling_prep import ApiFinancialModelingPrep
 from src.apis.financial_modeling_prep.financial_statements.financial_statements_enum import FinancialStatementsEnum
 from src.apis.financial_modeling_prep.fundamentals_analysis.fundamentals_analysis_enum import FundamentalsAnalysisEnum
@@ -6,6 +9,9 @@ from src.apis.sec.company_concept_enum import CompanyConceptEnum
 
 
 def print_api_sec_responses():
+    """
+    Temporal test to print api sec responses
+    """
     api_sec = ApiSEC()
     print(api_sec.get_company_tickers_exchange())
     print(api_sec.get_company_concept(company_concept=CompanyConceptEnum.EARNINGS_PER_SHARE_DILUTED,
@@ -15,6 +21,9 @@ def print_api_sec_responses():
 
 
 def print_api_financial_modeling_prep_responses():
+    """
+    Temporal test to print api financial modeling prep
+    """
     api_financial_modeling_prep = ApiFinancialModelingPrep()
     print(api_financial_modeling_prep.get_stock_fundamentals(symbol='AAPL',
                                                              fundamental=FinancialStatementsEnum.INCOME_STATEMENT))

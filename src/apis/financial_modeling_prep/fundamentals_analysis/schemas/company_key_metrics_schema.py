@@ -1,3 +1,8 @@
+"""
+Company Key Metrics Schema
+Definition of the json-schema for the company key metrics response.
+"""
+
 COMPANY_KEY_METRICS_SCHEMA = {
     "type": "array",
     "items": {"type": "object",
