@@ -14,7 +14,7 @@ class ApiFinancialModelingPrep(Api):
 
     def get_stock_fundamentals(self, symbol: str,
                                fundamental: FinancialModelingPrepEnum):
-        """"""
+        """This API returns the stock fundamentals given a path_concept, symbol and api_key."""
         url = f'https://financialmodelingprep.com/api/v3/{fundamental.get_path_concept()}/' \
               f'{symbol}?apikey={self.api_key}'
         stock_fundamental = self.call_api(url=url)
