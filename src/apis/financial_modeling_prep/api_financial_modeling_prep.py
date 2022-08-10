@@ -20,4 +20,3 @@ class ApiFinancialModelingPrep(Api):
         stock_fundamental = self.call_api(url=url)
         fundamental.get_validate_data(data_to_validate=stock_fundamental)
         return stock_fundamental
-

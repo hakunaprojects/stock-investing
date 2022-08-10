@@ -8,7 +8,6 @@ from src.apis.sec.api_sec import ApiSEC
 from src.apis.sec.company_concept_enum import CompanyConceptEnum
 from tests.unit.apis.test_api import mock_response
 
-
 CURRENT_FOLDER = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -21,6 +20,7 @@ class TestApiSec(unittest.TestCase):
         # Prepare api_sec_method to be called
         def get_company_tickers_exchange_method():
             return ApiSEC().get_company_tickers_exchange()
+
         # Build mock, call method and assert response
         self.given_json_response_when_call_api_sec_method_then_validate_and_return_json(
             api_sec_method=get_company_tickers_exchange_method,
@@ -31,6 +31,7 @@ class TestApiSec(unittest.TestCase):
         # Prepare api_sec_method to be called
         def get_company_facts_method():
             return ApiSEC().get_company_facts(cik=1318605)
+
         # Build mock, call method and assert response
         self.given_json_response_when_call_api_sec_method_then_validate_and_return_json(
             api_sec_method=get_company_facts_method,
@@ -41,6 +42,7 @@ class TestApiSec(unittest.TestCase):
         # Prepare api_sec_method to be called
         def get_submissions_method():
             return ApiSEC().get_submissions(cik=1318605)
+
         # Build mock, call method and assert response
         self.given_json_response_when_call_api_sec_method_then_validate_and_return_json(
             api_sec_method=get_submissions_method,
@@ -53,6 +55,7 @@ class TestApiSec(unittest.TestCase):
             # Prepare api_sec_method to be called
             def get_company_concept_method(company_concept):
                 return ApiSEC().get_company_concept(company_concept=company_concept, cik=1318605)
+
             # Build mock, call method and assert response
             self.given_json_response_when_call_api_sec_method_then_validate_and_return_json(
                 api_sec_method=get_company_concept_method,

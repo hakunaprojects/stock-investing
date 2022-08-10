@@ -19,5 +19,3 @@ class FinancialStatementsEnum(FinancialModelingPrepEnum):
                                'validation_schema': BALANCE_SHEET_STATEMENT_SCHEMA}
     CASH_FLOW_STATEMENT = {'concept': 'CashFlowStatement', 'path_concept': 'cash-flow-statement',
                            'validation_schema': CASH_FLOW_STATEMENT_SCHEMA}
-
-
