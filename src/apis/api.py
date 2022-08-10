@@ -21,15 +21,17 @@ class Api:
             self.delay()
         # Get response
         response = requests.get(url=url, headers=headers)
-        if response.status_code == 404:
-            raise NotValidUrlException(f"Url {url} not found.")
-        # Register datetime of last_call
-        self.last_call = datetime.now()
-        # Return dict
-        try:
-            return json.loads(response.text)
-        except Exception as e:
-            raise NonJsonDataFoundException(f"The response from ``{url}`` is not a valid json. Exception: {e}")
+        # Check status response and raise exceptions if necessary
+        if response.status_code == 200:
+            self.last_call = datetime.now()
+            try:
+                return json.loads(response.text)
+            except Exception as e:
+                raise NonJsonDataFoundException(f"The response from ``{url}`` is not a valid json. Exception: {e}")
+        elif response.status_code == 404:
+            raise NotValidUrlException(f"Url ``{url}`` not found.")
+        else:
+            raise NotValidUrlException(f"Error when requests url ``{url}``. Response: {response.__dict__}")
 
     def delay(self) -> None:
         """Subroutine to delay between successive calls to a data source url like SEC or fin mod prep, if needed.
