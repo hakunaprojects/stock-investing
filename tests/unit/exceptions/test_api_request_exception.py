@@ -10,7 +10,7 @@ API_REQUEST_EXCEPTIONS = [{'exception': NotValidUrlException, 'message': 'Not va
 TODAY = date.today()
 
 
-def test_given_request_exceptions_when_raising_they_should_throw_exception_with_its_code_message_and_timestamp():
+def test_given_request_exceptions_when_raising_then_throw_exception_with_its_code_message_and_timestamp():
     for api_request_exception in API_REQUEST_EXCEPTIONS:
         exception = api_request_exception.get('exception')
         message = api_request_exception.get('message')
