@@ -38,7 +38,7 @@ class TestApi(unittest.TestCase):
             api.call_api(url="https://fake_url_2.com")
         # Asserts
         self.assertEqual('ERROR.API_REQUEST', exc_info.value.code)
-        self.assertEqual('Url ``https://fake_url.com`` not found.', exc_info.value.message)
+        self.assertEqual('Url ``https://fake_url_2.com`` not found.', exc_info.value.message)
 
     @patch('src.apis.api.requests')
     def test_given_response_with_status_500_when_call_api_then_throw_exception(self, mock_requests):
@@ -51,4 +51,4 @@ class TestApi(unittest.TestCase):
             api.call_api(url="https://fake_url_3.com")
         # Asserts
         self.assertEqual('ERROR.API_REQUEST', exc_info.value.code)
-        self.assertRegex(exc_info.value.message, r'^Error when requests url ``https://fake_url.com``. Response:')
+        self.assertRegex(exc_info.value.message, r'^Error when requests url ``https://fake_url_3.com``. Response:')
