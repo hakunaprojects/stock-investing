@@ -23,7 +23,7 @@ class TestApi(unittest.TestCase):
         # Call the api
         api = Api()
         response = api.call_api(url="https://fake_url_1.com")
-        # Test if the response
+        # Asserts
         expected_response = json.loads(mocked_response.text)
         self.assertEqual(expected_response, response)
 
@@ -36,7 +36,7 @@ class TestApi(unittest.TestCase):
         with pytest.raises(NotValidUrlException) as exc_info:
             api = Api()
             api.call_api(url="https://fake_url_2.com")
-        # Test if the response
+        # Asserts
         self.assertEqual('ERROR.API_REQUEST', exc_info.value.code)
         self.assertEqual('Url ``https://fake_url.com`` not found.', exc_info.value.message)
 
@@ -49,6 +49,6 @@ class TestApi(unittest.TestCase):
         with pytest.raises(NotValidUrlException) as exc_info:
             api = Api()
             api.call_api(url="https://fake_url_3.com")
-        # Test if the response
+        # Asserts
         self.assertEqual('ERROR.API_REQUEST', exc_info.value.code)
         self.assertRegex(exc_info.value.message, r'^Error when requests url ``https://fake_url.com``. Response:')
