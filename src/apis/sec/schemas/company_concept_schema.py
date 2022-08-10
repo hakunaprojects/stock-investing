@@ -5,6 +5,7 @@ COMPANY_CONCEPT_SCHEMA = {
             "taxonomy": {"type": "string"},
             "tag": {"type": "string"},
             "label": {"type": "string"},
+            "description": {"type": "string"},
             "entityName": {"type": "string"},
             "units": {"type": "object",
                       "items": {"type": "array",
@@ -31,5 +32,8 @@ COMPANY_CONCEPT_SCHEMA = {
                                               "form",
                                               "filed"
                                           ]}
-                                }}}
+                                }}
+        },
+        "additionalProperties": False,
+        "minProperties": 7
     }

@@ -8,5 +8,7 @@ COMPANY_FACTS_SCHEMA = {
                           "dei": {"type": "object"},
                           "us-gaap": {"type": "object"},
                       }}
-        }
+        },
+        "additionalProperties": False,
+        "minProperties": 3
     }

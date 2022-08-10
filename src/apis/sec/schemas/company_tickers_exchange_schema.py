@@ -10,5 +10,7 @@ COMPANY_TICKERS_EXCHANGE_SCHEMA = {
                                    {"type": "string"},
                                    {"type": "string"}]
                                }}
-        }
+        },
+        "additionalProperties": False,
+        "minProperties": 2
     }
