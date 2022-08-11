@@ -1,9 +1,9 @@
 """
-Cash Flow Statement Schema
+Company Cash Flow Statement Schema
 Definition of the json-schema for the cash flow statement response.
 """
 
-CASH_FLOW_STATEMENT_SCHEMA = {
+COMPANY_CASH_FLOW_STATEMENT_SCHEMA = {
     "type": "array",
     "items": {"type": "object",
               "properties":

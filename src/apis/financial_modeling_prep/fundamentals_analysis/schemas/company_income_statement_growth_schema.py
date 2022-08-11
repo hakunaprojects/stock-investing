@@ -1,8 +1,8 @@
 """
-Income Statement Growth Schema
+Company Income Statement Growth Schema
 Definition of the json-schema for the income statement growth response.
 """
-INCOME_STATEMENT_GROWTH_SCHEMA = {
+COMPANY_INCOME_STATEMENT_GROWTH_SCHEMA = {
     "type": "array",
     "items": {"type": "object",
               "properties":
