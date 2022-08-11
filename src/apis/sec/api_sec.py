@@ -24,11 +24,11 @@ def _cik_to_ten_digits_str(cik: int):
 class ApiSEC(Api):
     """Api to retrieve data from financial modeling prep. For some requests is required an email."""
 
-    def __init__(self):
+    def __init__(self, user_email=None):
         super().__init__()
         self.headers = {
             "Accept-Encoding": "gzip, deflate",
-            "User-Agent": os.environ['SEC_USER_EMAIL'],
+            "User-Agent": user_email if user_email else os.environ['SEC_USER_EMAIL'],
             "Host": "data.sec.gov"
         }
 

@@ -12,9 +12,9 @@ from src.apis.financial_modeling_prep.financial_modeling_prep_enum import Financ
 class ApiFinancialModelingPrep(Api):
     """Api to retrieve data from financial modeling prep. It is required an api key."""
 
-    def __init__(self):
+    def __init__(self, api_key=None):
         super().__init__()
-        self.api_key = os.environ['FINANCIAL_MODELING_PREP_API_KEY']
+        self.api_key = api_key if api_key else os.environ['FINANCIAL_MODELING_PREP_API_KEY']
 
     def get_stock_fundamentals(self, symbol: str,
                                fundamental: FinancialModelingPrepEnum):
