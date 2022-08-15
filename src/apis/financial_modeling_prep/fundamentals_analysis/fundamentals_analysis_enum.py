@@ -5,13 +5,8 @@ Prep Api.
 """
 
 from src.apis.financial_modeling_prep.financial_modeling_prep_enum import FinancialModelingPrepEnum
-from src.apis.financial_modeling_prep.fundamentals_analysis.schemas.company_financial_growth_schema import \
-    COMPANY_FINANCIAL_GROWTH_SCHEMA
-from src.apis.financial_modeling_prep.fundamentals_analysis.schemas.company_financial_ratios_schema import \
-    COMPANY_FINANCIAL_RATIOS_SCHEMA
-from src.apis.financial_modeling_prep.fundamentals_analysis.schemas.company_income_statement_growth_schema import \
-    COMPANY_INCOME_STATEMENT_GROWTH_SCHEMA
-from src.apis.financial_modeling_prep.fundamentals_analysis.schemas.company_key_metrics_schema import \
+from src.apis.financial_modeling_prep.fundamentals_analysis.schemas.fundamentals_analysis_schemas import \
+    COMPANY_FINANCIAL_RATIOS_SCHEMA, COMPANY_INCOME_STATEMENT_GROWTH_SCHEMA, COMPANY_FINANCIAL_GROWTH_SCHEMA, \
     COMPANY_KEY_METRICS_SCHEMA
 
 

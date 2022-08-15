@@ -1,0 +1,121 @@
+{
+    "items": {
+        "additionalProperties": false,
+        "minProperties": 37,
+        "properties": {
+            "assetGrowth": {
+                "type": "number"
+            },
+            "bookValueperShareGrowth": {
+                "type": "number"
+            },
+            "date": {
+                "type": "string"
+            },
+            "debtGrowth": {
+                "type": "number"
+            },
+            "dividendsperShareGrowth": {
+                "type": "number"
+            },
+            "ebitgrowth": {
+                "type": "number"
+            },
+            "epsdilutedGrowth": {
+                "type": "number"
+            },
+            "epsgrowth": {
+                "type": "number"
+            },
+            "fiveYDividendperShareGrowthPerShare": {
+                "type": "number"
+            },
+            "fiveYNetIncomeGrowthPerShare": {
+                "type": "number"
+            },
+            "fiveYOperatingCFGrowthPerShare": {
+                "type": "number"
+            },
+            "fiveYRevenueGrowthPerShare": {
+                "type": "number"
+            },
+            "fiveYShareholdersEquityGrowthPerShare": {
+                "type": "number"
+            },
+            "freeCashFlowGrowth": {
+                "type": "number"
+            },
+            "grossProfitGrowth": {
+                "type": "number"
+            },
+            "inventoryGrowth": {
+                "type": "number"
+            },
+            "netIncomeGrowth": {
+                "type": "number"
+            },
+            "operatingCashFlowGrowth": {
+                "type": "number"
+            },
+            "operatingIncomeGrowth": {
+                "type": "number"
+            },
+            "period": {
+                "type": "string"
+            },
+            "rdexpenseGrowth": {
+                "type": "number"
+            },
+            "receivablesGrowth": {
+                "type": "number"
+            },
+            "revenueGrowth": {
+                "type": "number"
+            },
+            "sgaexpensesGrowth": {
+                "type": "number"
+            },
+            "symbol": {
+                "type": "string"
+            },
+            "tenYDividendperShareGrowthPerShare": {
+                "type": "number"
+            },
+            "tenYNetIncomeGrowthPerShare": {
+                "type": "number"
+            },
+            "tenYOperatingCFGrowthPerShare": {
+                "type": "number"
+            },
+            "tenYRevenueGrowthPerShare": {
+                "type": "number"
+            },
+            "tenYShareholdersEquityGrowthPerShare": {
+                "type": "number"
+            },
+            "threeYDividendperShareGrowthPerShare": {
+                "type": "number"
+            },
+            "threeYNetIncomeGrowthPerShare": {
+                "type": "number"
+            },
+            "threeYOperatingCFGrowthPerShare": {
+                "type": "number"
+            },
+            "threeYRevenueGrowthPerShare": {
+                "type": "number"
+            },
+            "threeYShareholdersEquityGrowthPerShare": {
+                "type": "number"
+            },
+            "weightedAverageSharesDilutedGrowth": {
+                "type": "number"
+            },
+            "weightedAverageSharesGrowth": {
+                "type": "number"
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}

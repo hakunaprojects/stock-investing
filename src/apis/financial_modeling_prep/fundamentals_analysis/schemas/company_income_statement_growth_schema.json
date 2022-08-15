@@ -1,0 +1,97 @@
+{
+    "items": {
+        "additionalProperties": false,
+        "minProperties": 29,
+        "properties": {
+            "date": {
+                "type": "string"
+            },
+            "growthCostAndExpenses": {
+                "type": "number"
+            },
+            "growthCostOfRevenue": {
+                "type": "number"
+            },
+            "growthDepreciationAndAmortization": {
+                "type": "number"
+            },
+            "growthEBITDA": {
+                "type": "number"
+            },
+            "growthEBITDARatio": {
+                "type": "number"
+            },
+            "growthEPS": {
+                "type": "number"
+            },
+            "growthEPSDiluted": {
+                "type": "number"
+            },
+            "growthGeneralAndAdministrativeExpenses": {
+                "type": "number"
+            },
+            "growthGrossProfit": {
+                "type": "number"
+            },
+            "growthGrossProfitRatio": {
+                "type": "number"
+            },
+            "growthIncomeBeforeTax": {
+                "type": "number"
+            },
+            "growthIncomeBeforeTaxRatio": {
+                "type": "number"
+            },
+            "growthIncomeTaxExpense": {
+                "type": "number"
+            },
+            "growthInterestExpense": {
+                "type": "number"
+            },
+            "growthNetIncome": {
+                "type": "number"
+            },
+            "growthNetIncomeRatio": {
+                "type": "number"
+            },
+            "growthOperatingExpenses": {
+                "type": "number"
+            },
+            "growthOperatingIncome": {
+                "type": "number"
+            },
+            "growthOperatingIncomeRatio": {
+                "type": "number"
+            },
+            "growthOtherExpenses": {
+                "type": "number"
+            },
+            "growthResearchAndDevelopmentExpenses": {
+                "type": "number"
+            },
+            "growthRevenue": {
+                "type": "number"
+            },
+            "growthSellingAndMarketingExpenses": {
+                "type": "number"
+            },
+            "growthTotalOtherIncomeExpensesNet": {
+                "type": "number"
+            },
+            "growthWeightedAverageShsOut": {
+                "type": "number"
+            },
+            "growthWeightedAverageShsOutDil": {
+                "type": "number"
+            },
+            "period": {
+                "type": "string"
+            },
+            "symbol": {
+                "type": "string"
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
