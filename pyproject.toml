@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "stock-investion"
+version = "0.1.0"
+description = "Stock Investion Project"
+authors = ["Oscar Orellana"]
+
+[tool.poetry.dependencies]
+python = "3.9.*"
+requests = "*"
+jsonschema = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+pytest-cov = "*"
+pylint = "*"
+flake8 = "*"
+black = "*"
+isort = "*"
+coverage = "*"
+coverage-badge = "*"
+
