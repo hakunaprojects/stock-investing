@@ -1,0 +1,130 @@
+{
+    "items": {
+        "additionalProperties": false,
+        "minProperties": 40,
+        "properties": {
+            "acceptedDate": {
+                "type": "string"
+            },
+            "accountsPayables": {
+                "type": "number"
+            },
+            "accountsReceivables": {
+                "type": "number"
+            },
+            "acquisitionsNet": {
+                "type": "number"
+            },
+            "calendarYear": {
+                "type": "string"
+            },
+            "capitalExpenditure": {
+                "type": "number"
+            },
+            "cashAtBeginningOfPeriod": {
+                "type": "number"
+            },
+            "cashAtEndOfPeriod": {
+                "type": "number"
+            },
+            "changeInWorkingCapital": {
+                "type": "number"
+            },
+            "cik": {
+                "type": "string"
+            },
+            "commonStockIssued": {
+                "type": "number"
+            },
+            "commonStockRepurchased": {
+                "type": "number"
+            },
+            "date": {
+                "type": "string"
+            },
+            "debtRepayment": {
+                "type": "number"
+            },
+            "deferredIncomeTax": {
+                "type": "number"
+            },
+            "depreciationAndAmortization": {
+                "type": "number"
+            },
+            "dividendsPaid": {
+                "type": "number"
+            },
+            "effectOfForexChangesOnCash": {
+                "type": "number"
+            },
+            "fillingDate": {
+                "type": "string"
+            },
+            "finalLink": {
+                "type": "string"
+            },
+            "freeCashFlow": {
+                "type": "number"
+            },
+            "inventory": {
+                "type": "number"
+            },
+            "investmentsInPropertyPlantAndEquipment": {
+                "type": "number"
+            },
+            "link": {
+                "type": "string"
+            },
+            "netCashProvidedByOperatingActivities": {
+                "type": "number"
+            },
+            "netCashUsedForInvestingActivites": {
+                "type": "number"
+            },
+            "netCashUsedProvidedByFinancingActivities": {
+                "type": "number"
+            },
+            "netChangeInCash": {
+                "type": "number"
+            },
+            "netIncome": {
+                "type": "number"
+            },
+            "operatingCashFlow": {
+                "type": "number"
+            },
+            "otherFinancingActivites": {
+                "type": "number"
+            },
+            "otherInvestingActivites": {
+                "type": "number"
+            },
+            "otherNonCashItems": {
+                "type": "number"
+            },
+            "otherWorkingCapital": {
+                "type": "number"
+            },
+            "period": {
+                "type": "string"
+            },
+            "purchasesOfInvestments": {
+                "type": "number"
+            },
+            "reportedCurrency": {
+                "type": "string"
+            },
+            "salesMaturitiesOfInvestments": {
+                "type": "number"
+            },
+            "stockBasedCompensation": {
+                "type": "number"
+            },
+            "symbol": {
+                "type": "string"
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
