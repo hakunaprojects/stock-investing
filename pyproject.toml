@@ -8,6 +8,7 @@ authors = ["Oscar Orellana"]
 python = "3.9.*"
 requests = "*"
 jsonschema = "*"
+python-dotenv = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
