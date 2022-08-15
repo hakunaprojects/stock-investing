@@ -1,0 +1,76 @@
+{
+    "additionalProperties": false,
+    "minProperties": 7,
+    "properties": {
+        "cik": {
+            "type": "number"
+        },
+        "description": {
+            "type": "string"
+        },
+        "entityName": {
+            "type": "string"
+        },
+        "label": {
+            "type": "string"
+        },
+        "tag": {
+            "type": "string"
+        },
+        "taxonomy": {
+            "type": "string"
+        },
+        "units": {
+            "items": {
+                "items": {
+                    "properties": {
+                        "accn": {
+                            "type": "string"
+                        },
+                        "end": {
+                            "type": "string"
+                        },
+                        "filed": {
+                            "type": "string"
+                        },
+                        "form": {
+                            "type": "string"
+                        },
+                        "fp": {
+                            "type": "string"
+                        },
+                        "frame": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "fy": {
+                            "type": "number"
+                        },
+                        "start": {
+                            "type": "string"
+                        },
+                        "val": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "start",
+                        "end",
+                        "val",
+                        "accn",
+                        "fy",
+                        "fp",
+                        "form",
+                        "filed"
+                    ],
+                    "type": "object"
+                },
+                "type": "array"
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}

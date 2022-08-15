@@ -1,0 +1,141 @@
+{
+    "properties": {
+        "addresses": {
+            "properties": {
+                "business": {
+                    "properties": {
+                        "city": {
+                            "type": "string"
+                        },
+                        "stateOrCountry": {
+                            "type": "string"
+                        },
+                        "stateOrCountryDescription": {
+                            "type": "string"
+                        },
+                        "street1": {
+                            "type": "string"
+                        },
+                        "street2": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "zipCode": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "mailing": {
+                    "properties": {
+                        "city": {
+                            "type": "string"
+                        },
+                        "stateOrCountry": {
+                            "type": "string"
+                        },
+                        "stateOrCountryDescription": {
+                            "type": "string"
+                        },
+                        "street1": {
+                            "type": "string"
+                        },
+                        "street2": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "zipCode": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "category": {
+            "type": "string"
+        },
+        "cik": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "ein": {
+            "type": "string"
+        },
+        "entityName": {
+            "type": "string"
+        },
+        "exchanges": {
+            "type": "array"
+        },
+        "filings": {
+            "type": "object"
+        },
+        "fiscalYearEnd": {
+            "type": "string"
+        },
+        "flags": {
+            "type": "string"
+        },
+        "formerNames": {
+            "items": {
+                "properties": {
+                    "from": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "to": {
+                        "format": "date-time",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "insiderTransactionForIssuerExists": {
+            "type": "number"
+        },
+        "insiderTransactionForOwnerExists": {
+            "type": "number"
+        },
+        "investorWebsite": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "phone": {
+            "type": "string"
+        },
+        "sic": {
+            "type": "string"
+        },
+        "sicDescription": {
+            "type": "string"
+        },
+        "stateOfIncorporation": {
+            "type": "string"
+        },
+        "stateOfIncorporationDescription": {
+            "type": "string"
+        },
+        "tickers": {
+            "type": "array"
+        },
+        "website": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
