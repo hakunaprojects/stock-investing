@@ -4,12 +4,8 @@ It contains all required information to retrieve and verify the Financial Statem
 Prep Api.
 """
 from src.apis.financial_modeling_prep.financial_modeling_prep_enum import FinancialModelingPrepEnum
-from src.apis.financial_modeling_prep.financial_statements.schemas.company_balance_sheet_statement_schema import \
-    COMPANY_BALANCE_SHEET_STATEMENT_SCHEMA
-from src.apis.financial_modeling_prep.financial_statements.schemas.company_cash_flow_statement_schema import \
-    COMPANY_CASH_FLOW_STATEMENT_SCHEMA
-from src.apis.financial_modeling_prep.financial_statements.schemas.company_income_statement_schema import \
-    COMPANY_INCOME_STATEMENT_SCHEMA
+from src.apis.financial_modeling_prep.financial_statements.schemas.financial_statements_schemas import \
+    COMPANY_INCOME_STATEMENT_SCHEMA, COMPANY_BALANCE_SHEET_STATEMENT_SCHEMA, COMPANY_CASH_FLOW_STATEMENT_SCHEMA
 
 
 class FinancialStatementsEnum(FinancialModelingPrepEnum):

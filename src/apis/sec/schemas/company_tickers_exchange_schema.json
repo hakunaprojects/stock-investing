@@ -1,0 +1,30 @@
+{
+    "additionalProperties": false,
+    "minProperties": 2,
+    "properties": {
+        "data": {
+            "items": {
+                "prefixItems": [
+                    {
+                        "type": "number"
+                    },
+                    {
+                        "type": "string"
+                    },
+                    {
+                        "type": "string"
+                    },
+                    {
+                        "type": "string"
+                    }
+                ],
+                "type": "array"
+            },
+            "type": "array"
+        },
+        "fields": {
+            "type": "array"
+        }
+    },
+    "type": "object"
+}

@@ -1,0 +1,124 @@
+{
+    "items": {
+        "additionalProperties": false,
+        "minProperties": 38,
+        "properties": {
+            "acceptedDate": {
+                "type": "string"
+            },
+            "calendarYear": {
+                "type": "string"
+            },
+            "cik": {
+                "type": "string"
+            },
+            "costAndExpenses": {
+                "type": "number"
+            },
+            "costOfRevenue": {
+                "type": "number"
+            },
+            "date": {
+                "type": "string"
+            },
+            "depreciationAndAmortization": {
+                "type": "number"
+            },
+            "ebitda": {
+                "type": "number"
+            },
+            "ebitdaratio": {
+                "type": "number"
+            },
+            "eps": {
+                "type": "number"
+            },
+            "epsdiluted": {
+                "type": "number"
+            },
+            "fillingDate": {
+                "type": "string"
+            },
+            "finalLink": {
+                "type": "string"
+            },
+            "generalAndAdministrativeExpenses": {
+                "type": "number"
+            },
+            "grossProfit": {
+                "type": "number"
+            },
+            "grossProfitRatio": {
+                "type": "number"
+            },
+            "incomeBeforeTax": {
+                "type": "number"
+            },
+            "incomeBeforeTaxRatio": {
+                "type": "number"
+            },
+            "incomeTaxExpense": {
+                "type": "number"
+            },
+            "interestExpense": {
+                "type": "number"
+            },
+            "interestIncome": {
+                "type": "number"
+            },
+            "link": {
+                "type": "string"
+            },
+            "netIncome": {
+                "type": "number"
+            },
+            "netIncomeRatio": {
+                "type": "number"
+            },
+            "operatingExpenses": {
+                "type": "number"
+            },
+            "operatingIncome": {
+                "type": "number"
+            },
+            "operatingIncomeRatio": {
+                "type": "number"
+            },
+            "otherExpenses": {
+                "type": "number"
+            },
+            "period": {
+                "type": "string"
+            },
+            "reportedCurrency": {
+                "type": "string"
+            },
+            "researchAndDevelopmentExpenses": {
+                "type": "number"
+            },
+            "revenue": {
+                "type": "number"
+            },
+            "sellingAndMarketingExpenses": {
+                "type": "number"
+            },
+            "sellingGeneralAndAdministrativeExpenses": {
+                "type": "number"
+            },
+            "symbol": {
+                "type": "string"
+            },
+            "totalOtherIncomeExpensesNet": {
+                "type": "number"
+            },
+            "weightedAverageShsOut": {
+                "type": "number"
+            },
+            "weightedAverageShsOutDil": {
+                "type": "number"
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}

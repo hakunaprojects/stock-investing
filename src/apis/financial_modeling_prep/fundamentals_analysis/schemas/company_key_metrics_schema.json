@@ -1,0 +1,193 @@
+{
+    "items": {
+        "additionalProperties": false,
+        "minProperties": 60,
+        "properties": {
+            "averageInventory": {
+                "type": "number"
+            },
+            "averagePayables": {
+                "type": "number"
+            },
+            "averageReceivables": {
+                "type": "number"
+            },
+            "bookValuePerShare": {
+                "type": "number"
+            },
+            "capexPerShare": {
+                "type": "number"
+            },
+            "capexToDepreciation": {
+                "type": "number"
+            },
+            "capexToOperatingCashFlow": {
+                "type": "number"
+            },
+            "capexToRevenue": {
+                "type": "number"
+            },
+            "cashPerShare": {
+                "type": "number"
+            },
+            "currentRatio": {
+                "type": "number"
+            },
+            "date": {
+                "type": "string"
+            },
+            "daysOfInventoryOnHand": {
+                "type": "number"
+            },
+            "daysPayablesOutstanding": {
+                "type": "number"
+            },
+            "daysSalesOutstanding": {
+                "type": "number"
+            },
+            "debtToAssets": {
+                "type": "number"
+            },
+            "debtToEquity": {
+                "type": "number"
+            },
+            "dividendYield": {
+                "type": "number"
+            },
+            "earningsYield": {
+                "type": "number"
+            },
+            "enterpriseValue": {
+                "type": "number"
+            },
+            "enterpriseValueOverEBITDA": {
+                "type": "number"
+            },
+            "evToFreeCashFlow": {
+                "type": "number"
+            },
+            "evToOperatingCashFlow": {
+                "type": "number"
+            },
+            "evToSales": {
+                "type": "number"
+            },
+            "freeCashFlowPerShare": {
+                "type": "number"
+            },
+            "freeCashFlowYield": {
+                "type": "number"
+            },
+            "grahamNetNet": {
+                "type": "number"
+            },
+            "grahamNumber": {
+                "type": "number"
+            },
+            "incomeQuality": {
+                "type": "number"
+            },
+            "intangiblesToTotalAssets": {
+                "type": "number"
+            },
+            "interestCoverage": {
+                "type": "number"
+            },
+            "interestDebtPerShare": {
+                "type": "number"
+            },
+            "inventoryTurnover": {
+                "type": "number"
+            },
+            "investedCapital": {
+                "type": "number"
+            },
+            "marketCap": {
+                "type": "number"
+            },
+            "netCurrentAssetValue": {
+                "type": "number"
+            },
+            "netDebtToEBITDA": {
+                "type": "number"
+            },
+            "netIncomePerShare": {
+                "type": "number"
+            },
+            "operatingCashFlowPerShare": {
+                "type": "number"
+            },
+            "payablesTurnover": {
+                "type": "number"
+            },
+            "payoutRatio": {
+                "type": "number"
+            },
+            "pbRatio": {
+                "type": "number"
+            },
+            "peRatio": {
+                "type": "number"
+            },
+            "period": {
+                "type": "string"
+            },
+            "pfcfRatio": {
+                "type": "number"
+            },
+            "pocfratio": {
+                "type": "number"
+            },
+            "priceToSalesRatio": {
+                "type": "number"
+            },
+            "ptbRatio": {
+                "type": "number"
+            },
+            "receivablesTurnover": {
+                "type": "number"
+            },
+            "researchAndDdevelopementToRevenue": {
+                "type": "number"
+            },
+            "returnOnTangibleAssets": {
+                "type": "number"
+            },
+            "revenuePerShare": {
+                "type": "number"
+            },
+            "roe": {
+                "type": "number"
+            },
+            "roic": {
+                "type": "number"
+            },
+            "salesGeneralAndAdministrativeToRevenue": {
+                "type": "number"
+            },
+            "shareholdersEquityPerShare": {
+                "type": "number"
+            },
+            "stockBasedCompensationToRevenue": {
+                "type": "number"
+            },
+            "symbol": {
+                "type": "string"
+            },
+            "tangibleAssetValue": {
+                "type": [
+                    "number",
+                    "null"
+                ]
+            },
+            "tangibleBookValuePerShare": {
+                "type": "number"
+            },
+            "workingCapital": {
+                "type": "number"
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}

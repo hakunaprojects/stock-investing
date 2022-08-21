@@ -10,10 +10,8 @@ from jsonschema.validators import validate
 
 from src.apis.api import Api
 from src.apis.sec.company_concept_enum import CompanyConceptEnum
-from src.apis.sec.schemas.company_concept_schema import COMPANY_CONCEPT_SCHEMA
-from src.apis.sec.schemas.company_facts_schema import COMPANY_FACTS_SCHEMA
-from src.apis.sec.schemas.company_tickers_exchange_schema import COMPANY_TICKERS_EXCHANGE_SCHEMA
-from src.apis.sec.schemas.submissions_schema import SUBMISSIONS_SCHEMA
+from src.apis.sec.schemas.sec_schemas import SUBMISSIONS_SCHEMA, COMPANY_CONCEPT_SCHEMA, COMPANY_FACTS_SCHEMA, \
+    COMPANY_TICKERS_EXCHANGE_SCHEMA
 
 
 def _cik_to_ten_digits_str(cik: int):
