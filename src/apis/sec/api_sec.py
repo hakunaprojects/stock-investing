@@ -3,7 +3,6 @@ Api SEC Class
 It retrieves data from the U.S. Securities and Exchange Commission (SEC). For additional information
 you can visit: https://www.sec.gov/edgar/sec-api-documentation
 """
-import os
 from typing import Union
 
 from jsonschema.validators import validate
@@ -12,6 +11,7 @@ from src.apis.api import Api
 from src.apis.sec.company_concept_enum import CompanyConceptEnum
 from src.apis.sec.schemas.sec_schemas import SUBMISSIONS_SCHEMA, COMPANY_CONCEPT_SCHEMA, COMPANY_FACTS_SCHEMA, \
     COMPANY_TICKERS_EXCHANGE_SCHEMA
+from src.shared.config import ENV_CONFIG
 
 
 def _cik_to_ten_digits_str(cik: int):
@@ -26,7 +26,7 @@ class ApiSEC(Api):
         super().__init__()
         self.headers = {
             "Accept-Encoding": "gzip, deflate",
-            "User-Agent": user_email if user_email else os.environ['SEC_USER_EMAIL'],
+            "User-Agent": user_email if user_email else ENV_CONFIG["SEC_USER_EMAIL"],
             "Host": "data.sec.gov"
         }
 

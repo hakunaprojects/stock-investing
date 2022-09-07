@@ -7,6 +7,7 @@ import os
 
 from src.apis.api import Api
 from src.apis.financial_modeling_prep.financial_modeling_prep_enum import FinancialModelingPrepEnum
+from src.shared.config import ENV_CONFIG
 
 
 class ApiFinancialModelingPrep(Api):
@@ -14,7 +15,7 @@ class ApiFinancialModelingPrep(Api):
 
     def __init__(self, api_key=None):
         super().__init__()
-        self.api_key = api_key if api_key else os.environ['FINANCIAL_MODELING_PREP_API_KEY']
+        self.api_key = api_key if api_key else ENV_CONFIG["FINANCIAL_MODELING_PREP_API_KEY"]
 
     def get_stock_fundamentals(self, symbol: str,
                                fundamental: FinancialModelingPrepEnum):
