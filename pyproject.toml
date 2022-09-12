@@ -5,7 +5,7 @@ description = "Stock Investion Project"
 authors = ["Oscar Orellana"]
 
 [tool.poetry.dependencies]
-python = "3.9.*"
+python = "3.10.*"
 requests = "*"
 jsonschema = "*"
 python-dotenv = "*"
