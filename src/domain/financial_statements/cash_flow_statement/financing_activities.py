@@ -1,4 +1,6 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+
+from src.shared.general_functions import sum_all_initialized_int_attributes
 
 
 @dataclass
@@ -11,4 +13,7 @@ class FinancingActivities:
     common_stock_repurchased: int
     dividends_paid: int
     other_financing_activities: int
-    net_cash_used_provided_by_financing_activities: int
+    net_cash_used_provided_by_financing_activities: field(init=False)
+
+    def __post_init__(self):
+        self.net_cash_used_provided_by_financing_activities = sum_all_initialized_int_attributes(self)

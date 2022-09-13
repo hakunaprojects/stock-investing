@@ -1,4 +1,6 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+
+from src.shared.general_functions import sum_all_initialized_int_attributes
 
 
 @dataclass
@@ -12,9 +14,8 @@ class OperatingActivities:
     deferred_income_tax: int
     stock_based_compensation: int
     change_in_working_capital: int
-    accounts_receivables: int
-    inventory: int
-    accounts_payables: int
-    other_working_capital: int
     other_non_cash_items: int
-    net_cash_provided_by_operating_activities: int
+    net_cash_provided_by_operating_activities: field(init=False)
+
+    def __post_init__(self):
+        self.net_cash_provided_by_operating_activities = sum_all_initialized_int_attributes(self)
