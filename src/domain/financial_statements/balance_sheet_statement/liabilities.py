@@ -34,7 +34,7 @@ class NonCurrentLiabilities:
 
 @dataclass
 class Liabilities:
-    """Liabilities refer to things that you owe or have borrowed."""
+    """Liabilities are financial obligations. It refers to things that the company owes or has borrowed."""
     current_liabilities: CurrentLiabilities
     non_current_liabilities: NonCurrentLiabilities
     other_liabilities: int
