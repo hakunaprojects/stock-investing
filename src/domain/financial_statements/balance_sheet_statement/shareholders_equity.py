@@ -1,4 +1,6 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+
+from src.shared.general_functions import sum_all_initialized_int_attributes
 
 
 @dataclass
@@ -13,4 +15,7 @@ class ShareholdersEquity:
     other_total_stockholders_equity: int
     total_stockholders_equity: int
     minority_interest: int
-    total_shareholders_equity: int
+    total_shareholders_equity: field(init=False)
+
+    def __post_init__(self):
+        self.total_shareholders_equity = sum_all_initialized_int_attributes(self)

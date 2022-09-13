@@ -1,4 +1,6 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+
+from src.shared.general_functions import sum_all_initialized_int_attributes
 
 
 @dataclass
@@ -10,7 +12,10 @@ class CurrentLiabilities:
     tax_payables: int
     deferred_revenue: int
     other_current_liabilities: int
-    total_current_liabilities: int
+    total_current_liabilities: field(init=False)
+
+    def __post_init__(self):
+        self.total_current_liabilities = sum_all_initialized_int_attributes(self)
 
 
 @dataclass
@@ -21,7 +26,10 @@ class NonCurrentLiabilities:
     deferred_revenue_non_current: int
     deferred_tax_liabilities_non_current: int
     other_non_current_liabilities: int
-    total_non_current_liabilities: int
+    total_non_current_liabilities: field(init=False)
+
+    def __post_init__(self):
+        self.total_non_current_liabilities = sum_all_initialized_int_attributes(self)
 
 
 @dataclass
@@ -31,4 +39,11 @@ class Liabilities:
     non_current_liabilities: NonCurrentLiabilities
     other_liabilities: int
     capital_lease_obligations: int
-    total_liabilities: int
+    total_liabilities: field(init=False)
+
+    def __post_init__(self):
+        self.total_liabilities = \
+            self.current_liabilities.total_current_liabilities + \
+            self.non_current_liabilities.total_non_current_liabilities + \
+            self.other_liabilities + \
+            self.capital_lease_obligations
