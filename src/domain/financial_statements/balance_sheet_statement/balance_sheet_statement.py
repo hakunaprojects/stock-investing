@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 
-from src.domain.balance_sheet_statement.assets import Assets
-from src.domain.balance_sheet_statement.shareholders_equity import ShareholdersEquity
-from src.domain.balance_sheet_statement.liabilities import Liabilities
+from src.domain.financial_statements.balance_sheet_statement.assets import Assets
+from src.domain.financial_statements.balance_sheet_statement.shareholders_equity import ShareholdersEquity
+from src.domain.financial_statements.balance_sheet_statement.liabilities import Liabilities
 
 
 @dataclass
