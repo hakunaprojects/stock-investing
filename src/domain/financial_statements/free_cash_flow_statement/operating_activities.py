@@ -7,7 +7,8 @@ class OperatingActivities:
     operations. Operating cash flow indicates whether a company can generate sufficient positive cash flow to
     maintain and grow its operations """
     net_income: int
-    depreciation_and_amortization: int
+    depreciation: int
+    amortization: int
     deferred_income_tax: int
     stock_based_compensation: int
     change_in_working_capital: int
