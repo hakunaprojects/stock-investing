@@ -1,9 +1,9 @@
 from dataclasses import dataclass
 from typing import Optional
 
-from src.domain.financial_statements.free_cash_flow_statement.financing_activities import FinancingActivities
-from src.domain.financial_statements.free_cash_flow_statement.investing_activities import InvestingActivities
-from src.domain.financial_statements.free_cash_flow_statement.operating_activities import OperatingActivities
+from src.domain.financial_statements.cash_flow_statement.financing_activities import FinancingActivities
+from src.domain.financial_statements.cash_flow_statement.investing_activities import InvestingActivities
+from src.domain.financial_statements.cash_flow_statement.operating_activities import OperatingActivities
 from src.domain.financial_statements.exceptions.cash_flow_statement_exception import \
     NotFoundCapitalExpenditureException
 
