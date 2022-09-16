@@ -14,7 +14,7 @@ class BalanceSheetStatementException(FinancialStatementsException):
 
 
 class IsNotBalancedException(BalanceSheetStatementException):
-    """Exception raised when the balanced sheet is not balanced."""
+    """Exception raised when the balance sheet is not balanced."""
 
     def __init__(self, message):
         super().__init__()
