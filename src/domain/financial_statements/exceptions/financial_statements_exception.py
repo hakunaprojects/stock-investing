@@ -3,7 +3,7 @@ Financial Statements Exceptions
 It contains the main exception related with the domain Financial Statements.
 """
 
-from src.exceptions.stock_investing_exception import StockInvestingException
+from src.domain.stock_investing_exception import StockInvestingException
 
 
 class FinancialStatementsException(StockInvestingException):
