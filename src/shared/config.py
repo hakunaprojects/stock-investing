@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
 
+from dotenv import dotenv_values
+
 _CURRENT_FOLDER = os.path.dirname(os.path.abspath(__file__))
 APIS_FOLDER = "apis"
 
@@ -13,6 +15,8 @@ FUNDAMENTALS_ANALYSIS_SCHEMAS_FOLDER = "schemas"
 
 SEC_FOLDER = "sec"
 SEC_SCHEMAS_FOLDER = "schemas"
+
+APP_FOLDER = "src"
 
 PROJECT_PATH = Path(_CURRENT_FOLDER).absolute().parent
 APIS_PATH = os.path.join(PROJECT_PATH, APIS_FOLDER)
@@ -32,3 +36,10 @@ SEC_SCHEMAS_PATH = os.path.join(PROJECT_PATH,
                                 APIS_PATH,
                                 SEC_FOLDER,
                                 SEC_SCHEMAS_FOLDER)
+
+
+ENV_CONFIG = {
+    **dotenv_values(f"{PROJECT_PATH}/.env.secrets"),  # load sensitive variables
+    **os.environ,  # override loaded values with environment variables
+}
+
