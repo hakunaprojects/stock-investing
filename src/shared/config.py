@@ -38,11 +38,8 @@ SEC_SCHEMAS_PATH = os.path.join(PROJECT_PATH,
                                 SEC_SCHEMAS_FOLDER)
 
 
-def load_dot_env():
-    return {
-        **dotenv_values(f"{PROJECT_PATH}/.env.secrets"),  # load sensitive variables
-        **os.environ,  # override loaded values with environment variables
-    }
+ENV_CONFIG = {
+    **dotenv_values(f"{PROJECT_PATH}/.env.secrets"),  # load sensitive variables
+    **os.environ,  # override loaded values with environment variables
+}
 
-
-ENV_CONFIG = load_dot_env()
