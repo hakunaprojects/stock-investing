@@ -18,8 +18,8 @@ class IncomeStatement:
     net_income: int = field(init=False)
 
     shares_outstanding: int
-    earnings_per_share: Optional[int]
-    earnings_per_share_diluted: Optional[int]
+    earnings_per_share: Optional[float]
+    earnings_per_share_diluted: Optional[float]
 
     def __post_init__(self):
         self.income_before_tax = \
