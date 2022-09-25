@@ -11,7 +11,7 @@ class CurrentAssets:
     net_receivables: int
     inventory: int
     other_current_assets: int
-    total_current_assets: field(init=False)
+    total_current_assets: int = field(init=False)
 
     def __post_init__(self):
         self.total_current_assets = sum_all_initialized_int_attributes(self)
@@ -27,7 +27,7 @@ class NonCurrentAssets:
     long_term_investments: int
     tax_assets: int
     other_non_current_assets: int
-    total_non_current_assets: field(init=False)
+    total_non_current_assets: int = field(init=False)
 
     def __post_init__(self):
         self.total_non_current_assets = sum_all_initialized_int_attributes(self)
@@ -39,7 +39,7 @@ class Assets:
     bought or created to increase a firm's value or benefit the firm's operations. """
     current_assets: CurrentAssets
     non_current_assets: NonCurrentAssets
-    total_assets: field(init=False)
+    total_assets: int = field(init=False)
 
     def __post_init__(self):
         self.total_assets = self.current_assets.total_current_assets + self.non_current_assets.total_non_current_assets

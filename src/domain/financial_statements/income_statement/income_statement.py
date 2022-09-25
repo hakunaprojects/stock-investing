@@ -14,8 +14,8 @@ class IncomeStatement:
     operating_section: OperatingSection
     non_operating_section: NonOperatingSection
     income_tax_expense: int
-    income_before_tax: field(init=False)  # Earnings before Tax (EBT)
-    net_income: field(init=False)
+    income_before_tax: int = field(init=False)  # Earnings before Tax (EBT)
+    net_income: int = field(init=False)
 
     shares_outstanding: int
     earnings_per_share: Optional[int]

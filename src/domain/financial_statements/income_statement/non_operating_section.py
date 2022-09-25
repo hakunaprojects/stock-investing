@@ -15,7 +15,7 @@ class NonOperatingSection:
     interest_expense: int
     other_non_operating_income: int
     other_non_operating_expenses: int
-    non_operating_income: field(init=False)
+    non_operating_income: int = field(init=False)
 
     def __post_init__(self):
         self.non_operating_income = \

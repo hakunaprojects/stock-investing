@@ -9,7 +9,7 @@ class OperatingRevenueSection:
     companies, referred as cost of goods sold (COGS) """
     revenue: int  # Or Sales
     cost_of_revenue: int  # In some companies: Cost of goods sold (cogs)
-    gross_profit: field(init=False)
+    gross_profit: int = field(init=False)
 
     def __post_init__(self):
         self.gross_profit = sum_all_initialized_int_attributes(self)
@@ -26,7 +26,7 @@ class OperatingExpensesSection:
     selling_and_marketing_expenses: int
     selling_general_and_administrative_Expenses: int
     other_operating_expenses: int
-    operating_expenses: field(init=False)
+    operating_expenses: int = field(init=False)
 
     def __post_init__(self):
         self.operating_expenses = sum_all_initialized_int_attributes(self)
@@ -42,8 +42,8 @@ class OperatingSection:
     operating_revenue_section: OperatingRevenueSection
     operating_expenses_section: OperatingExpensesSection
     depreciation_and_amortization_expense: int
-    ebitda: field(init=False)
-    operating_income: field(init=False)  # Also called Earnings before interest and taxes (EBIT)
+    ebitda: int = field(init=False)
+    operating_income: int = field(init=False)  # Also called Earnings before interest and taxes (EBIT)
 
     def __post_init__(self):
         self.ebitda = \

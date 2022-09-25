@@ -18,8 +18,8 @@ class CashFlowStatement:
     investing_activities: InvestingActivities
     financing_activities: FinancingActivities
     cash_at_beginning_of_period: int
-    net_cash_flow: field(init=False)
-    cash_at_end_of_period: field(init=False)
+    net_cash_flow: int = field(init=False)
+    cash_at_end_of_period: int = field(init=False)
     capital_expenditure: Optional[int]
     free_cash_flow: Optional[int]
 
