@@ -18,19 +18,19 @@ class CashFlowStatement:
     investing_activities: InvestingActivities
     financing_activities: FinancingActivities
     cash_at_beginning_of_period: int
-    net_cash_flow: int = field(init=False)
+    net_change_in_cash_flow: int = field(init=False)
     cash_at_end_of_period: int = field(init=False)
-    capital_expenditure: Optional[int]
-    free_cash_flow: Optional[int]
+    capital_expenditure: Optional[int] = None
+    free_cash_flow: Optional[int] = None
 
     def __post_init__(self):
-        self._calculate_net_cash_flow()
-        self.cash_at_end_of_period = self.cash_at_beginning_of_period - self.net_cash_flow
+        self._calculate_net_change_in_cash_flow()
+        self.cash_at_end_of_period = self.cash_at_beginning_of_period + self.net_change_in_cash_flow
 
-    def _calculate_net_cash_flow(self):
+    def _calculate_net_change_in_cash_flow(self):
         """Net cash flow is a variable and a profitability metric that represents the amount of money produced
         or lost by a business during a given period."""
-        self.net_cash_flow = \
+        self.net_change_in_cash_flow = \
             self.operating_activities.net_cash_provided_by_operating_activities + \
             self.investing_activities.net_cash_used_for_investing_activities + \
             self.financing_activities.net_cash_used_provided_by_financing_activities
@@ -40,9 +40,10 @@ class CashFlowStatement:
         spends to buy, maintain, or improve its fixed assets, such as buildings, vehicles, equipment, or land.
         It is considered a capital expenditure when the asset is newly purchased or when money is used towards
         extending the useful life of an existing asset, such as repairing the roof..."""
-        self.capital_expenditure = \
+        net_increase_in_property_plant_and_equipment = \
             self.investing_activities.investments_in_property_plant_and_equipment - \
-            previous_year_investments_in_property_plant_and_equipment + self.operating_activities.depreciation
+            previous_year_investments_in_property_plant_and_equipment
+        self.capital_expenditure = net_increase_in_property_plant_and_equipment + self.operating_activities.depreciation
 
     def calculate_free_cash_flow(self, interest_expense: int, tax_shield: int):
         """Free cash flow (FCF) represents the cash a company generates after accounting for cash outflows to support
