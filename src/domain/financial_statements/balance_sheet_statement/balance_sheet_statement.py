@@ -24,7 +24,7 @@ class BalanceSheetStatement:
 
     def check_is_balanced(self):
         """A balance sheet should always balance. Assets must always equal liabilities plus owners' equity."""
-        if self.assets.total_assets != self.total_liabilities_and_total_equity:
+        if self.assets.total_assets != self.total_liabilities_and_total_equity():
             raise IsNotBalancedException(f"Balance sheet is not balanced. Assets must always equal liabilities plus "
                                          f"owners' equity.")
 
