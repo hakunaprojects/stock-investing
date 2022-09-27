@@ -14,17 +14,14 @@ class IncomeStatement:
     operating_section: OperatingSection
     non_operating_section: NonOperatingSection
     income_tax_expense: int
-    income_before_tax: int = field(init=False)  # Earnings before Tax (EBT)
+    income_before_tax: int  # Earnings before Tax (EBT) TODO Analyze and add to __post_init__ function
     net_income: int = field(init=False)
 
     shares_outstanding: int
-    earnings_per_share: Optional[float]
-    earnings_per_share_diluted: Optional[float]
+    earnings_per_share: Optional[float] = None
+    earnings_per_share_diluted: Optional[float] = None
 
     def __post_init__(self):
-        self.income_before_tax = \
-            self.operating_section.operating_income + \
-            self.non_operating_section.non_operating_income
         self.net_income = self.income_before_tax - self.income_tax_expense
 
     def calculate_earnings_per_share(self, initial_shares_outstanding: int):
@@ -39,5 +36,5 @@ class IncomeStatement:
         prices and conditions. As an example of an additional dilution: an early investor holds a convertible
         security that could result in five million more shares being issued when the investor wants to convert it. """
         avg_shares_outstanding = (initial_shares_outstanding + self.shares_outstanding)/2
-        self.earnings_per_share = self.net_income / (avg_shares_outstanding + additional_dilution)
+        self.earnings_per_share_diluted = self.net_income / (avg_shares_outstanding + additional_dilution)
 
