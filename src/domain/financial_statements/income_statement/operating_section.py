@@ -12,7 +12,7 @@ class OperatingRevenueSection:
     gross_profit: int = field(init=False)
 
     def __post_init__(self):
-        self.gross_profit = sum_all_initialized_int_attributes(self)
+        self.gross_profit = self.revenue - self.cost_of_revenue
 
 
 @dataclass
@@ -26,10 +26,10 @@ class OperatingExpensesSection:
     selling_and_marketing_expenses: int
     selling_general_and_administrative_Expenses: int
     other_operating_expenses: int
-    operating_expenses: int = field(init=False)
+    total_operating_expenses: int = field(init=False)
 
     def __post_init__(self):
-        self.operating_expenses = sum_all_initialized_int_attributes(self)
+        self.total_operating_expenses = sum_all_initialized_int_attributes(self)
 
 
 @dataclass
@@ -47,5 +47,5 @@ class OperatingSection:
 
     def __post_init__(self):
         self.ebitda = \
-            self.operating_revenue_section.gross_profit - self.operating_expenses_section.operating_expenses
+            self.operating_revenue_section.gross_profit - self.operating_expenses_section.total_operating_expenses
         self.operating_income = self.ebitda - self.depreciation_and_amortization_expense
