@@ -2,7 +2,7 @@ from datetime import date
 
 import pytest
 
-from src.exceptions.api_request_exception import NotValidUrlException, NonJsonDataFoundException, \
+from src.infrastructure.apis.exceptions.api_request_exception  import NotValidUrlException, NonJsonDataFoundException, \
     NotValidSchemaException
 
 API_REQUEST_EXCEPTIONS = [{'exception': NotValidUrlException, 'message': 'Not valid url'},

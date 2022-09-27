@@ -5,7 +5,7 @@ from unittest.mock import patch, MagicMock
 import pytest
 
 from src.infrastructure.apis.api import Api
-from src.exceptions.api_request_exception import NotValidUrlException
+from src.infrastructure.apis.exceptions.api_request_exception import NotValidUrlException
 
 
 def mock_response(status_code: int, text: str = None) -> MagicMock:
