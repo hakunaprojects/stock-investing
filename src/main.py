@@ -4,7 +4,7 @@ Main Module
 from src.infrastructure.apis.financial_modeling_prep.api_financial_modeling_prep import ApiFinancialModelingPrep
 from src.infrastructure.apis.financial_modeling_prep.financial_statements.financial_statements_enum import FinancialStatementsEnum
 from src.infrastructure.apis.financial_modeling_prep.fundamentals_analysis.fundamentals_analysis_enum import FundamentalsAnalysisEnum
-from src.infrastructure.apis.sec import ApiSEC
+from src.infrastructure.apis.sec.api_sec import ApiSEC
 from src.infrastructure.apis.sec.company_concept_enum import CompanyConceptEnum
 
 
