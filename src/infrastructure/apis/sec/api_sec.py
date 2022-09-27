@@ -7,9 +7,9 @@ from typing import Union
 
 from jsonschema.validators import validate
 
-from src.apis.api import Api
-from src.apis.sec.company_concept_enum import CompanyConceptEnum
-from src.apis.sec.schemas.sec_schemas import SUBMISSIONS_SCHEMA, COMPANY_CONCEPT_SCHEMA, COMPANY_FACTS_SCHEMA, \
+from src.infrastructure.apis.api import Api
+from src.infrastructure.apis.sec.company_concept_enum import CompanyConceptEnum
+from src.infrastructure.apis.sec.schemas.sec_schemas import SUBMISSIONS_SCHEMA, COMPANY_CONCEPT_SCHEMA, COMPANY_FACTS_SCHEMA, \
     COMPANY_TICKERS_EXCHANGE_SCHEMA
 from src.shared.config import ENV_CONFIG
 

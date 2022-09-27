@@ -1,11 +1,11 @@
 """
 Main Module
 """
-from src.apis.financial_modeling_prep.api_financial_modeling_prep import ApiFinancialModelingPrep
-from src.apis.financial_modeling_prep.financial_statements.financial_statements_enum import FinancialStatementsEnum
-from src.apis.financial_modeling_prep.fundamentals_analysis.fundamentals_analysis_enum import FundamentalsAnalysisEnum
-from src.apis.sec.api_sec import ApiSEC
-from src.apis.sec.company_concept_enum import CompanyConceptEnum
+from src.infrastructure.apis.financial_modeling_prep.api_financial_modeling_prep import ApiFinancialModelingPrep
+from src.infrastructure.apis.financial_modeling_prep.financial_statements.financial_statements_enum import FinancialStatementsEnum
+from src.infrastructure.apis.financial_modeling_prep.fundamentals_analysis.fundamentals_analysis_enum import FundamentalsAnalysisEnum
+from src.infrastructure.apis.sec import ApiSEC
+from src.infrastructure.apis.sec.company_concept_enum import CompanyConceptEnum
 
 
 def print_api_sec_responses():
