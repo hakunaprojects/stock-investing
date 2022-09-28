@@ -41,10 +41,10 @@ jobs:
       - prepare_environment
     runs-on: ubuntu-20.04
     steps:
-     - name: Debug info
-       run: |
-         ls
-         docker ps
+      - name: Debug info
+        run: |
+          ls
+          docker ps
 
       - name: Run Tests
-        run: make test
+        run: make tests
