@@ -26,11 +26,12 @@ jobs:
   lint_check:
     needs:
       - prepare_environment
-    runs-on: ubuntu-20.04
+    runs-on: self-hosted
     steps:
       - name: Debug info
         run: |
           ls
+          docker ps
       - name: Run Lint
         run: make lint
 
@@ -39,5 +40,9 @@ jobs:
       - prepare_environment
     runs-on: ubuntu-20.04
     steps:
+     - name: Debug info
+     run: |
+       ls
+       docker ps
       - name: Run Tests
         run: make test
