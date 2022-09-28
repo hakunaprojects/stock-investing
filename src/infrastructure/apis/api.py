@@ -9,7 +9,7 @@ from typing import Dict, Optional
 
 import requests
 
-from src.exceptions.api_request_exception import NotValidUrlException, NonJsonDataFoundException
+from src.infrastructure.apis.exceptions.api_request_exception import NotValidUrlException, NonJsonDataFoundException
 
 
 class Api:

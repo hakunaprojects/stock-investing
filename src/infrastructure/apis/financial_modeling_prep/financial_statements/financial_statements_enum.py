@@ -3,8 +3,8 @@ FinancialStatementsEnum
 It contains all required information to retrieve and verify the Financial Statements Data from the Financial Modeling
 Prep Api.
 """
-from src.apis.financial_modeling_prep.financial_modeling_prep_enum import FinancialModelingPrepEnum
-from src.apis.financial_modeling_prep.financial_statements.schemas.financial_statements_schemas import \
+from src.infrastructure.apis.financial_modeling_prep.financial_modeling_prep_enum import FinancialModelingPrepEnum
+from src.infrastructure.apis.financial_modeling_prep.financial_statements.schemas.financial_statements_schemas import \
     COMPANY_INCOME_STATEMENT_SCHEMA, COMPANY_BALANCE_SHEET_STATEMENT_SCHEMA, COMPANY_CASH_FLOW_STATEMENT_SCHEMA
 
 

@@ -4,7 +4,7 @@ It contains all exceptions related with Api Requests interactions.
 """
 from datetime import datetime
 
-from src.exceptions.stock_investing_exception import StockInvestingException
+from src.domain.stock_investing_exception import StockInvestingException
 
 
 class ApiRequestException(StockInvestingException):

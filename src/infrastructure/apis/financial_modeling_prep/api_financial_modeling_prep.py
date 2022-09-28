@@ -3,10 +3,9 @@ Api Financial Modeling Prep Class
 It retrieves data from a third party provider who gets the information from the U.S. Securities and Exchange Commission
 (SEC). For additional information you can visit: https://site.financialmodelingprep.com/developer/docs/
 """
-import os
 
-from src.apis.api import Api
-from src.apis.financial_modeling_prep.financial_modeling_prep_enum import FinancialModelingPrepEnum
+from src.infrastructure.apis.api import Api
+from src.infrastructure.apis.financial_modeling_prep.financial_modeling_prep_enum import FinancialModelingPrepEnum
 from src.shared.config import ENV_CONFIG
 
 
