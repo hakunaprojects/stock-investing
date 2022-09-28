@@ -28,6 +28,9 @@ jobs:
       - prepare_environment
     runs-on: ubuntu-20.04
     steps:
+      - name: Debug info
+        run: |
+          ls
       - name: Run Lint
         run: make lint
 
