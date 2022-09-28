@@ -5,8 +5,8 @@ from unittest.mock import patch
 
 import pytest
 
-from src.apis.sec.api_sec import ApiSEC
-from src.apis.sec.company_concept_enum import CompanyConceptEnum
+from src.infrastructure.apis.sec.api_sec import ApiSEC
+from src.infrastructure.apis.sec.company_concept_enum import CompanyConceptEnum
 from tests.unit.apis.test_api import mock_response
 
 CURRENT_FOLDER = os.path.dirname(os.path.abspath(__file__))
@@ -66,7 +66,7 @@ class TestApiSec:
             company_concept=company_concept_enum
         )
 
-    @patch('src.apis.api.requests')
+    @patch('src.infrastructure.apis.api.requests')
     def _given_json_response_when_call_api_method_then_validate_and_return_json(self, mock_requests,
                                                                                 api_method: Callable,
                                                                                 json_file_path: str,

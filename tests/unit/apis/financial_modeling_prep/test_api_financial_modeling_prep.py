@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 import pytest
 
-from src.apis.financial_modeling_prep.api_financial_modeling_prep import ApiFinancialModelingPrep
-from src.apis.financial_modeling_prep.financial_modeling_prep_enum import FinancialModelingPrepEnum
-from src.apis.financial_modeling_prep.financial_statements.financial_statements_enum import FinancialStatementsEnum
-from src.apis.financial_modeling_prep.fundamentals_analysis.fundamentals_analysis_enum import FundamentalsAnalysisEnum
+from src.infrastructure.apis.financial_modeling_prep.api_financial_modeling_prep import ApiFinancialModelingPrep
+from src.infrastructure.apis.financial_modeling_prep.financial_modeling_prep_enum import FinancialModelingPrepEnum
+from src.infrastructure.apis.financial_modeling_prep.financial_statements.financial_statements_enum import FinancialStatementsEnum
+from src.infrastructure.apis.financial_modeling_prep.fundamentals_analysis.fundamentals_analysis_enum import FundamentalsAnalysisEnum
 from tests.unit.apis.test_api import mock_response
 
 CURRENT_FOLDER = os.path.dirname(os.path.abspath(__file__))
@@ -55,7 +55,7 @@ class TestApiFinancialModelingPrep:
             symbol='AAPL',
             fundamental=enum)
 
-    @patch('src.apis.api.requests')
+    @patch('src.infrastructure.apis.api.requests')
     def _given_json_response_when_call_api_method_then_validate_and_return_json(self, mock_requests,
                                                                                 json_file_name: str,
                                                                                 file_directory: str,
