@@ -16,6 +16,10 @@ jobs:
         with:
           python-version: 3.9
 
+      - name: Setup environment
+        run: |
+            make venv
+
       - name: Install Dependencies
         run: make all-dependencies
 
