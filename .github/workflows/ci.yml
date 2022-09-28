@@ -32,6 +32,7 @@ jobs:
         run: |
           ls
           docker ps
+
       - name: Run Lint
         run: make lint
 
@@ -41,8 +42,9 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
      - name: Debug info
-     run: |
-       ls
-       docker ps
+       run: |
+         ls
+         docker ps
+
       - name: Run Tests
         run: make test
