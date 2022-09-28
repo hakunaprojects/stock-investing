@@ -26,8 +26,9 @@ jobs:
   lint_check:
     needs:
       - prepare_environment
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Debug info
         run: |
           ls
@@ -41,6 +42,7 @@ jobs:
       - prepare_environment
     runs-on: ubuntu-20.04
     steps:
+      - uses: actions/checkout@v3
       - name: Debug info
         run: |
           ls
