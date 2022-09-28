@@ -27,19 +27,6 @@ jobs:
         run: |
           ls
 
-  lint_check:
-    needs:
-      - prepare_environment
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Debug info
-        run: |
-          ls
-
-      - name: Run Lint
-        run: make lint
-
   tests_check:
     needs:
       - prepare_environment
