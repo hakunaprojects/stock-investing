@@ -7,7 +7,7 @@ import pytest
 
 from src.infrastructure.apis.sec.api_sec import ApiSEC
 from src.infrastructure.apis.sec.company_concept_enum import CompanyConceptEnum
-from tests.unit.apis.test_api import mock_response
+from tests.unit.infrastructure.apis.test_api import mock_response
 
 CURRENT_FOLDER = os.path.dirname(os.path.abspath(__file__))
 
