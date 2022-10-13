@@ -8,7 +8,7 @@ from src.infrastructure.apis.financial_modeling_prep.api_financial_modeling_prep
 from src.infrastructure.apis.financial_modeling_prep.financial_modeling_prep_enum import FinancialModelingPrepEnum
 from src.infrastructure.apis.financial_modeling_prep.financial_statements.financial_statements_enum import FinancialStatementsEnum
 from src.infrastructure.apis.financial_modeling_prep.fundamentals_analysis.fundamentals_analysis_enum import FundamentalsAnalysisEnum
-from tests.unit.apis.test_api import mock_response
+from tests.unit.infrastructure.apis.test_api import mock_response
 
 CURRENT_FOLDER = os.path.dirname(os.path.abspath(__file__))
 
