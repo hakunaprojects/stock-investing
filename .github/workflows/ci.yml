@@ -19,5 +19,10 @@ jobs:
       - name: Install Dependencies
         run: make all-dependencies
 
+      - name: Debug
+        run: | 
+          ls
+          uname -a
+
       - name: Run Tests
         run: make tests
