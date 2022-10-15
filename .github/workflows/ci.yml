@@ -3,13 +3,11 @@ name: CI
 on: [ pull_request ]
 
 jobs:
-  prepare_environment:
+  continous_integration:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-#        with:
-#          ref: ${{ github.event.inputs.branch }}
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -19,16 +17,12 @@ jobs:
       - name: Virtual Environment
         run: make venv
 
+      - name: Where I am
+        run: |
+          ls -lha
+
       - name: Install Dependencies
         run: make all-dependencies
-
-      - name: Debug
-        run: | 
-          ls -lha
-          pwd
-          uname -a
-          echo "VIRTUAL ENV:" $VIRTUAL_ENV
-          export
 
       - name: Run Tests
         run: make tests
