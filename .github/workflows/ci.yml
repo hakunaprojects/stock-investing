@@ -23,6 +23,7 @@ jobs:
         run: | 
           ls
           uname -a
+          echo "VIRTUAL ENV:" $VIRTUAL_ENV
 
       - name: Run Tests
         run: make tests
