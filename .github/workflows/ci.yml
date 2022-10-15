@@ -16,26 +16,8 @@ jobs:
         with:
           python-version: 3.10.7
 
-      - name: Setup environment
-        run: |
-            make venv
-
       - name: Install Dependencies
         run: make all-dependencies
-
-      - name: Debug info
-        run: |
-          ls
-
-  tests_check:
-    needs:
-      - prepare_environment
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v3
-      - name: Debug info
-        run: |
-          ls
 
       - name: Run Tests
         run: make tests
