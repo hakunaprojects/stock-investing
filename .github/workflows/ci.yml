@@ -21,7 +21,8 @@ jobs:
 
       - name: Debug
         run: | 
-          ls
+          ls -lha
+          pwd
           uname -a
           echo "VIRTUAL ENV:" $VIRTUAL_ENV
           export
