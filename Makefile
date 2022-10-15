@@ -46,13 +46,18 @@ venv:  ## creates a virtualenv if does not exist and activates it
 .PHONY: install
 install: venv all-dependencies ## Create venv and install all depencencies
 
-
 .PHONY: tests
 tests:  ## Run unit and integration tests
-	pytest --cov
+	( \
+       source venv/bin/activate; \
+       pytest --cov; \
+    )
 
 .PHONY: coverage-report
 coverage-report: ## coverage report of all tests
-	coverage run -m unittest discover
-	coverage html
-	open htmlcov/index.html
+	( \
+		source venv/bin/activate; \
+		coverage run -m unittest discover; \
+		coverage html; \
+		open htmlcov/index.html; \
+	)
