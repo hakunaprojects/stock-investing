@@ -48,15 +48,13 @@ install: venv all-dependencies ## Create venv and install all depencencies
 
 .PHONY: tests
 tests:  ## Run unit and integration tests
-	( \
-       source venv/bin/activate; \
-       pytest --cov; \
+	(   . venv/bin/activate; \
+		pytest --cov; \
     )
 
 .PHONY: coverage-report
 coverage-report: ## coverage report of all tests
-	( \
-		source venv/bin/activate; \
+	(   . venv/bin/activate; \
 		coverage run -m unittest discover; \
 		coverage html; \
 		open htmlcov/index.html; \
