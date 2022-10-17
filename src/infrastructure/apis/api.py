@@ -8,8 +8,10 @@ from datetime import datetime
 from typing import Dict, Optional
 
 import requests
-
-from src.infrastructure.apis.exceptions.api_request_exception import NotValidUrlException, NonJsonDataFoundException
+from src.infrastructure.apis.exceptions.api_request_exception import (
+    NonJsonDataFoundException,
+    NotValidUrlException,
+)
 
 
 class Api:
@@ -18,7 +20,9 @@ class Api:
     def __init__(self):
         self.last_call = None
 
-    def call_api(self, url: str, delay: bool = True, headers: Dict[str, str] = None) -> Optional[Dict]:
+    def call_api(
+        self, url: str, delay: bool = True, headers: Dict[str, str] = None
+    ) -> Optional[Dict]:
         """Receive the content of ``url``, parse it as JSON and return the object."""
         # Add delay if necessary
         if delay:
@@ -31,11 +35,15 @@ class Api:
             try:
                 return json.loads(response.text)
             except Exception as exception:
-                raise NonJsonDataFoundException(f"The response from ``{url}`` is not a valid json") from exception
+                raise NonJsonDataFoundException(
+                    f"The response from ``{url}`` is not a valid json"
+                ) from exception
         elif response.status_code == 404:
             raise NotValidUrlException(f"Url ``{url}`` not found.")
         else:
-            raise NotValidUrlException(f"Error when requests url ``{url}``. Response: {response.__dict__}")
+            raise NotValidUrlException(
+                f"Error when requests url ``{url}``. Response: {response.__dict__}"
+            )
 
     def delay(self) -> None:
         """Subroutine to delay between successive calls to a data source url like SEC or fin mod prep, if needed.

@@ -13,7 +13,8 @@ class MagicFormula(ABC):
 
     The magic formula ranks companies based in two factors: return on capital and earnings yield. These factors can
     be measured in different ways, however they are calculated in the way he described in his book - The Little Book
-    That Still Beats the Market. """
+    That Still Beats the Market."""
+
     _items: List[MagicFormulaItem] = []
 
     def execute(self, tickers: List[str]):
@@ -23,7 +24,9 @@ class MagicFormula(ABC):
 
     def _rank_magic_formula_items(self):
         # Rank and set ranking_position value to MagicFormulaItems
-        self._items.sort(key=lambda single_item: single_item.ranking_sum_factors, reverse=True)
+        self._items.sort(
+            key=lambda single_item: single_item.ranking_sum_factors, reverse=True
+        )
         index = 1
         for item in self._items:
             item.ranking_position = index
@@ -31,68 +34,85 @@ class MagicFormula(ABC):
 
     def _set_ranking_values_to_magic_formula_items(self):
         # Set ranking_return_on_capital value to MagicFormulaItems
-        self._items.sort(key=lambda single_item: single_item.return_on_capital, reverse=True)
+        self._items.sort(
+            key=lambda single_item: single_item.return_on_capital, reverse=True
+        )
         index = 1
         for item in self._items:
             item.ranking_return_on_capital = index
             index += 1
         # Set ranking_earnings_yield and ranking_sum_factors value to MagicFormulaItems
-        self._items.sort(key=lambda single_item: single_item.earnings_yield, reverse=True)
+        self._items.sort(
+            key=lambda single_item: single_item.earnings_yield, reverse=True
+        )
         index = 1
         for item in self._items:
             item.earnings_yield = index
-            item.ranking_sum_factors = item.ranking_return_on_capital + item.earnings_yield
+            item.ranking_sum_factors = (
+                item.ranking_return_on_capital + item.earnings_yield
+            )
             index += 1
 
     def _generate_magic_formula_items(self, tickers: List[str]):
         for ticker in tickers:
             ebit = self.calculate_ebit(ticker=ticker)
-            self._items.append(MagicFormulaItem(
-                ticker=ticker,
-                return_on_capital=self._return_on_capital(ticker, ebit),
-                earnings_yield=self._earnings_yield(ticker, ebit)
-            ))
+            self._items.append(
+                MagicFormulaItem(
+                    ticker=ticker,
+                    return_on_capital=self._return_on_capital(ticker, ebit),
+                    earnings_yield=self._earnings_yield(ticker, ebit),
+                )
+            )
 
     def _return_on_capital(self, ticker: str, ebit: float) -> float:
         """Return on capital was measured by calculating the ratio of EBIT to tangible capital employed. Using EBIT
         allowed us to view and compare the operating earnings of different companies without the distortions arising
         from differences in tax rates and debt levels. Tangible capital employed was used instead of total assets or
-        equity because the idea was to figure out how much capital is actually needed to conduct the business. """
-        tangible_capital_employed = \
-            self.calculate_net_working_capital(ticker=ticker) + self.calculate_fixed_assets(ticker=ticker)
+        equity because the idea was to figure out how much capital is actually needed to conduct the business."""
+        tangible_capital_employed = self.calculate_net_working_capital(
+            ticker=ticker
+        ) + self.calculate_fixed_assets(ticker=ticker)
         return ebit / tangible_capital_employed
 
     def _earnings_yield(self, ticker: str, ebit: float) -> float:
         """The basic idea behind this factor is figure out how much a business earns relative to the purchase price
         of the business. This ratio allow us to put companies with different levels of debt and different tax rates
         on an equal footing when comparing earnings yields. P/E and E/P are greatly influenced by changes in debt
-        levels and tax rates, while EBIT/EV not. """
+        levels and tax rates, while EBIT/EV not."""
         return ebit / self.calculate_enterprise_value(ticker=ticker)
 
     # The following functions can be overridden in non-abstract derived classes.
     def calculate_ebit(self, **kwargs) -> float:
         """For purposes of the study,depreciation and amortization expense were roughly equal to maintenance capital
-        spending requirements (cash expenses not charged against earnings). """
-        ebitda = self.get_ebitda(ticker=kwargs.get('ticker'))
-        maintenance_capex = self.get_maintenance_capex(ticker=kwargs.get('ticker'))
+        spending requirements (cash expenses not charged against earnings)."""
+        ebitda = self.get_ebitda(ticker=kwargs.get("ticker"))
+        maintenance_capex = self.get_maintenance_capex(ticker=kwargs.get("ticker"))
         return ebitda - maintenance_capex
 
     def calculate_net_working_capital(self, **kwargs) -> float:
         """Net working capital was used because a company has to fund its receivables and inventory (excess cash not
         needed to conduct the business was excluded from the calculation) but does not have to lay out money for its
         payables, as these are effectively an interest-free loan (short-term interest-bearing debt was excluded from
-        current liabilities). """
-        return self.get_total_current_assets(**kwargs) - self.get_excess_cash(**kwargs) - self.get_accounts_payable(
-            **kwargs)
+        current liabilities)."""
+        return (
+            self.get_total_current_assets(**kwargs)
+            - self.get_excess_cash(**kwargs)
+            - self.get_accounts_payable(**kwargs)
+        )
 
     def calculate_fixed_assets(self, **kwargs) -> float:
         """A company must also fund the purchase of fixed assets necessary to conduct its business, such as real
-        estate, plant, and equipment. On the other hand, intangible assets, specifically goodwill. """
-        return self.get_total_assets() - self.get_total_current_assets() - self.get_intangibles() - self.get_goodwill()
+        estate, plant, and equipment. On the other hand, intangible assets, specifically goodwill."""
+        return (
+            self.get_total_assets()
+            - self.get_total_current_assets()
+            - self.get_intangibles()
+            - self.get_goodwill()
+        )
 
     def calculate_enterprise_value(self, ticker: str, **kwargs) -> float:
         """Enterprise value takes into account both the price paid for an equity stake in a business both the
-        debt financing used by a company to help generate operating earnings. """
+        debt financing used by a company to help generate operating earnings."""
         total_debt = self.get_long_term_debt() + self.get_total_current_liabilities()
         return self.get_market_capitalization() + total_debt - self.get_cash()
 

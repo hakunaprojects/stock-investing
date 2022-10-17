@@ -9,7 +9,7 @@ from src.domain.stock_investing_exception import StockInvestingException
 
 class ApiRequestException(StockInvestingException):
     """Api request exception inherits from the main project exception, it sets the code and all other exceptions
-    inherit from this. Here, the code is set. """
+    inherit from this. Here, the code is set."""
 
     def __init__(self):
         super().__init__()

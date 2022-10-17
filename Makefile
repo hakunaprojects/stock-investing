@@ -33,7 +33,7 @@ lint: ## check source code for style errors
 	flake8 . && black . --check
 
 .PHONY: format
-format: ## automatic source code formatter following a strict set of standards
+format: ## automa tic source code formatter following a strict set of standards
 	isort . --sp .isort.cfg && black .
 
 .PHONY: venv

@@ -1,7 +1,5 @@
 from dataclasses import dataclass, field
 
-from src.shared.general_functions import sum_all_initialized_int_attributes
-
 
 @dataclass
 class NonOperatingSection:
@@ -11,6 +9,7 @@ class NonOperatingSection:
     business property, income from strategic partnerships like royalty payment receipts, or income from an
     advertisement display placed on business property. Also, there are all expenses linked to non-core business
     activities, like interest paid on loan money."""
+
     interest_income: int
     interest_expense: int
     other_non_operating_income: int
@@ -18,8 +17,9 @@ class NonOperatingSection:
     non_operating_income: int = field(init=False)
 
     def __post_init__(self):
-        self.non_operating_income = \
-            self.interest_income - \
-            self.interest_expense + \
-            self.other_non_operating_income - \
-            self.other_non_operating_expenses
+        self.non_operating_income = (
+            self.interest_income
+            - self.interest_expense
+            + self.other_non_operating_income
+            - self.other_non_operating_expenses
+        )

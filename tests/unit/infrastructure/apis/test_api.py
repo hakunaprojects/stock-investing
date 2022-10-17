@@ -1,11 +1,12 @@
 import json
 import unittest
-from unittest.mock import patch, MagicMock
+from unittest.mock import MagicMock, patch
 
 import pytest
-
 from src.infrastructure.apis.api import Api
-from src.infrastructure.apis.exceptions.api_request_exception import NotValidUrlException
+from src.infrastructure.apis.exceptions.api_request_exception import (
+    NotValidUrlException,
+)
 
 
 def mock_response(status_code: int, text: str = None) -> MagicMock:
@@ -16,11 +17,12 @@ def mock_response(status_code: int, text: str = None) -> MagicMock:
 
 
 class TestApi(unittest.TestCase):
-    @patch('src.infrastructure.apis.api.requests')
+    @patch("src.infrastructure.apis.api.requests")
     def test_given_response_when_call_api_then_return_valid_json(self, mock_requests):
         # Specify the return value of the get() method
-        mocked_response = mock_response(status_code=200,
-                                        text='{ "name":"John", "age":30, "city":"New York"}')
+        mocked_response = mock_response(
+            status_code=200, text='{ "name":"John", "age":30, "city":"New York"}'
+        )
         mock_requests.get.return_value = mocked_response
         # Call the api
         api = Api()
@@ -29,8 +31,10 @@ class TestApi(unittest.TestCase):
         expected_response = json.loads(mocked_response.text)
         self.assertEqual(expected_response, response)
 
-    @patch('src.infrastructure.apis.api.requests')
-    def test_given_response_with_status_404_when_call_api_then_throw_exception(self, mock_requests):
+    @patch("src.infrastructure.apis.api.requests")
+    def test_given_response_with_status_404_when_call_api_then_throw_exception(
+        self, mock_requests
+    ):
         # Specify the return value of the get() method
         mocked_response = mock_response(status_code=404)
         mock_requests.get.return_value = mocked_response
@@ -39,11 +43,15 @@ class TestApi(unittest.TestCase):
             api = Api()
             api.call_api(url="https://fake_url_2.com")
         # Asserts
-        self.assertEqual('ERROR.API_REQUEST', exc_info.value.code)
-        self.assertEqual('Url ``https://fake_url_2.com`` not found.', exc_info.value.message)
+        self.assertEqual("ERROR.API_REQUEST", exc_info.value.code)
+        self.assertEqual(
+            "Url ``https://fake_url_2.com`` not found.", exc_info.value.message
+        )
 
-    @patch('src.infrastructure.apis.api.requests')
-    def test_given_response_with_status_500_when_call_api_then_throw_exception(self, mock_requests):
+    @patch("src.infrastructure.apis.api.requests")
+    def test_given_response_with_status_500_when_call_api_then_throw_exception(
+        self, mock_requests
+    ):
         # Specify the return value of the get() method
         mocked_response = mock_response(status_code=500)
         mock_requests.get.return_value = mocked_response
@@ -52,5 +60,8 @@ class TestApi(unittest.TestCase):
             api = Api()
             api.call_api(url="https://fake_url_3.com")
         # Asserts
-        self.assertEqual('ERROR.API_REQUEST', exc_info.value.code)
-        self.assertRegex(exc_info.value.message, r'^Error when requests url ``https://fake_url_3.com``. Response:')
+        self.assertEqual("ERROR.API_REQUEST", exc_info.value.code)
+        self.assertRegex(
+            exc_info.value.message,
+            r"^Error when requests url ``https://fake_url_3.com``. Response:",
+        )

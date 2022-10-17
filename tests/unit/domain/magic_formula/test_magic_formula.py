@@ -40,6 +40,8 @@ class TestMagicFormula:
         def get_maintenance_capex(self, **kwargs) -> float:
             return 0
 
-    def test_given_all_components_when_build_balance_sheet_object_then_it_should_be_balanced(self):
+    def test_given_all_components_when_build_balance_sheet_object_then_it_should_be_balanced(
+        self,
+    ):
         magic_formula = self.MagicFormulaImplementation()
-        magic_formula.execute(tickers=['APPL'])
+        magic_formula.execute(tickers=["APPL"])

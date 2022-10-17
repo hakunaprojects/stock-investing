@@ -2,7 +2,9 @@
 Cash Flow Statement Exceptions
 It contains all exceptions related with the domain Cash Flow Statement from Financial Statements.
 """
-from src.domain.financial_statements.exceptions.financial_statements_exception import FinancialStatementsException
+from src.domain.financial_statements.exceptions.financial_statements_exception import (
+    FinancialStatementsException,
+)
 
 
 class CashFlowStatementException(FinancialStatementsException):
