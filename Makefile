@@ -30,7 +30,9 @@ all-dependencies: app-dependencies dev-dependencies ## install all dependencies
 
 .PHONY: lint
 lint: ## check source code for style errors
-	flake8 . && black . --check
+	(. venv/bin/activate; \
+	flake8 . && black . --check; \
+    )
 
 .PHONY: format
 format: ## automatic source code formatter following a strict set of standards
@@ -44,7 +46,7 @@ venv:  ## creates a virtualenv if does not exist and activates it
 		test -d venv || ${PYTHON} -m venv venv # setup a python3 virtualenv
 
 .PHONY: install
-install: venv all-dependencies ## Create venv and install all depencencies
+install: venv all-dependencies ## Create venv and install all dependencies
 
 .PHONY: tests
 tests:  ## Run unit and integration tests
