@@ -3,8 +3,12 @@ name: CI
 on: [ pull_request ]
 
 jobs:
-  continous_integration:
-    runs-on: ubuntu-20.04
+  continuous_integration:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ "3.10" ]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -12,17 +16,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.10.7
+          python-version: ${{ matrix.python-version }}
 
-      - name: Virtual Environment
-        run: make venv
+      - name: Virtual Environment & Dependencies
+        run: make install
 
-      - name: Where I am
-        run: |
-          ls -lha
-
-      - name: Install Dependencies
-        run: make all-dependencies
+      - name: Run Lint
+        run: make lint
 
       - name: Run Tests
         run: make tests
